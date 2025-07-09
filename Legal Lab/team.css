@@ -1,0 +1,117 @@
+/* General page layout */
+.team-page {
+  max-width: 1200px;
+  margin: 20px auto 100px auto;
+  padding: 100px 20px 0 20px;
+  color: #4b3b39;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.team-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team-hero h1 {
+  font-size: 44px;
+  color: #7a5f5c;
+  margin-bottom: 20px;
+}
+
+.team-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #5a4a48;
+}
+
+/* Team layout */
+.team-bios {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.team-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Team cards */
+.team-card {
+  background-color: #fdf9f8;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  min-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Image placeholders */
+.team-image {
+  width: 120px;
+  height: 120px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Card text */
+.team-card h2 {
+  font-size: 22px;
+  color: #7a5f5c;
+  margin-bottom: 10px;
+}
+
+.team-card p {
+  color: #5a4a48;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* CTA buttons */
+.team-cta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+/* CTA Buttons Style Update */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #492a3a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #321e23;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #492a3a;
+  color: #492a3a;
+}
+
+.btn-secondary:hover {
+  background-color: #492a3a;
+  color: #fff;
+}

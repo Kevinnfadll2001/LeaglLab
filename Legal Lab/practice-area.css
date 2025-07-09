@@ -1,0 +1,160 @@
+/* ========================
+  Practice Areas Page Styles
+=========================== */
+
+/* Body Background Image */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('womenLL.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Page Container */
+.practice-page {
+  max-width: 1200px;
+  margin: 30px auto 100px auto;
+  padding: 100px 20px 0 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.practice-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.practice-hero h1 {
+  font-size: 48px;
+  color: #492a3a;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.practice-hero p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #492a3a;
+  font-size: 18px;
+}
+
+
+/* Practice Areas List (Grid Layout) */
+.practice-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* Practice Area Card */
+.practice-list article {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #eaeaea;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: left;
+  color: #4b3b39;
+}
+
+.practice-list article:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Practice Area Title */
+.practice-list h2 {
+  font-size: 24px;
+  color: #7a5f5c;
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Practice Area Description */
+.practice-list p {
+  color: #5a4a48;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Call-to-Action Button Group */
+.practice-cta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+/* Call-to-Action Buttons */
+.practice-cta .btn {
+  background-color: #492a3a;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.practice-cta .btn:hover {
+  background-color: #9c7a77;
+}
+
+.practice-cta .btn-secondary {
+  background-color: #a88a86;
+}
+
+.practice-cta .btn-secondary:hover {
+  background-color: #bca7a3;
+}
+
+/* Optional Icon Styles */
+.practice-list i {
+  font-size: 28px;
+  color: #7a5f5c;
+  margin-bottom: 12px;
+  display: block;
+}
+/* Call-to-Action Buttons */
+.practice-cta .btn {
+  background-color: #492a3a;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.practice-cta .btn:hover {
+  background-color: #321e23;
+  transform: translateY(-2px);
+}
+
+/* Secondary Button Style */
+.practice-cta .btn-secondary {
+  background-color: transparent;
+  border: 2px solid #492a3a;
+  color: #492a3a;
+}
+
+.practice-cta .btn-secondary:hover {
+  background-color: #492a3a;
+  color: #fff;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal Lab - Book a Consultation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="consultation.css" />
+    <script src="include.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- Top Header (social icons) -->
+
+
+    <div data-include="header.html"></div>
+    <!-- Main Content -->
+    <main class="consultation-page">
+        <section class="consultation-hero">
+            <h1>Book a Consultation</h1>
+            <p>Get in touch for personalized legal support tailored to your needs.</p>
+        </section>
+        <form class="consultation-form" action="https://formsubmit.co/kevinfadel15@gmail.com" method="POST">
+            <!-- Disable Captcha -->
+            <input type="hidden" name="_captcha" value="false">
+
+            <!-- Redirect after submit -->
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/thankyouconsultation.html">
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone">Phone</label>
+           <input type="tel" name="phone" placeholder="Your Phone" required pattern="[0-9]{8,15}">
+
+
+            <label for="service">Type of Service Needed</label>
+            <select id="service" name="service" required>
+                <option value="" disabled selected>Select a Service</option>
+                <option value="Corporate Law">Corporate Law</option>
+                <option value="Family Law">Family Law</option>
+                <option value="Criminal Law">Criminal Law</option>
+                <option value="Dispute Resolution">Dispute Resolution</option>
+                <option value="Company Setup">Company Setup</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="description">Description of Legal Issue</label>
+            <textarea id="description" name="description" rows="5" required></textarea>
+
+            <div class="cta-buttons consultation-cta">
+                <button type="submit" class="btn">Submit Request</button>
+                <a href="tel:+1234567890" class="btn btn-secondary">Call Now</a>
+            </div>
+        </form>
+
+    </main>
+
+    <!-- Footer -->
+    <div data-include="footer.html"></div>
+
+</body>
+
+</html>

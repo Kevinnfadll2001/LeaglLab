@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Test Sticky Header</title>
+<style>
+  body {
+    margin: 0; font-family: Arial, sans-serif;
+  }
+  .top-header {
+    background: #492a3a;
+    color: white;
+    padding: 8px 40px;
+    height: 40px;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    max-height: 40px;
+    opacity: 1;
+  }
+  .top-header.hidden {
+    max-height: 0 !important;
+    opacity: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    pointer-events: none;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  }
+  main {
+    height: 2000px;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="top-header">
+  <div class="social-icons">
+    Social Icons Here
+  </div>
+</div>
+
+<header>
+  Main Navigation Bar
+</header>
+
+<main>
+  Scroll down content...
+</main>
+
+<script>
+  const topHeader = document.querySelector('.top-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      topHeader.classList.add('hidden');
+    } else {
+      topHeader.classList.remove('hidden');
+    }
+  });
+</script>
+
+</body>
+</html>

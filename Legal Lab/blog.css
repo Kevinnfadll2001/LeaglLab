@@ -1,0 +1,25 @@
+.blog-page {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.blog-page h1 {
+  text-align: center;
+  color: #7a5f5c;
+  margin-bottom: 40px;
+}
+
+.blog-item {
+  margin-bottom: 30px;
+}
+
+.blog-item h2 {
+  color: #7a5f5c;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.blog-item p {
+  color: #555;
+}

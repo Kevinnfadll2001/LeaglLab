@@ -1,0 +1,75 @@
+/* Hero Section with background image and overlay */
+.hero {
+  max-width: 100%;
+  margin: 0;
+  padding: 120px 20px 100px 20px;
+  background: url('women.png') no-repeat center center;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay for readability */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(48, 31, 30, 0.6);
+  z-index: 0;
+}
+
+/* Text content above overlay */
+.hero h1,
+.hero-location {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 46px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.hero-location {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #f0f0f0;
+}
+
+/* Spacing to prevent header overlap */
+.main {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+/* Introduction & Highlights (if needed later) */
+.introduction,
+.services-highlights {
+  margin: 60px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.introduction h2,
+.services-highlights h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #7a5f5c;
+  font-weight: 600;
+}
+
+.introduction p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #5a4a48;
+  mar
+}

@@ -1,0 +1,140 @@
+.consultation-page {
+    max-width: 700px;
+    margin: 80px auto 100px auto;
+    padding: 0 20px;
+    color: #4b3b39;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.consultation-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.consultation-hero h1 {
+    font-size: 44px;
+    color: #7a5f5c;
+    margin-bottom: 20px;
+}
+
+.consultation-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #5a4a48;
+}
+
+.consultation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.consultation-form label {
+    font-weight: 600;
+    color: #7a5f5c;
+    margin-bottom: 5px;
+}
+
+.consultation-form input,
+.consultation-form select,
+.consultation-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.consultation-form textarea {
+    resize: vertical;
+}
+
+.consultation-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.consultation-cta .btn {
+    flex: 1 1 auto;
+}
+/* Add background to the whole body */
+body {
+  background: url('logo.png') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #4b3b39;
+  line-height: 1.6;
+}
+
+/* Keep consultation-page styling as is */
+.consultation-page {
+    max-width: 700px;
+    margin: 80px auto 100px auto;
+    padding: 0 20px;
+    /* Keep text readable with a white translucent bg */
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* The rest unchanged */
+.consultation-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.consultation-hero h1 {
+    font-size: 44px;
+    color: #7a5f5c;
+    margin-bottom: 20px;
+}
+
+.consultation-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #5a4a48;
+}
+
+.consultation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.consultation-form label {
+    font-weight: 600;
+    color: #7a5f5c;
+    margin-bottom: 5px;
+}
+
+.consultation-form input,
+.consultation-form select,
+.consultation-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.consultation-form textarea {
+    resize: vertical;
+}
+
+.consultation-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.consultation-cta .btn {
+    flex: 1 1 auto;
+}

@@ -1,0 +1,154 @@
+/* Reset background and base settings */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfdfd;
+  color: #4b3b39;
+  line-height: 1.6;
+}
+
+main {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* Intro Text */
+.about-intro {
+  max-width: 1100px;
+  margin: 60px auto 50px auto;
+  text-align: center;
+}
+
+.about-intro p {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* Image Section */
+.about-image {
+  max-width: 1100px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Boxes: Vision, Mission, Values */
+.about-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 50px auto;
+}
+
+.about-box {
+  flex: 1 1 300px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.about-box h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #7a5f5c;
+}
+
+.about-box p,
+.about-box ul {
+  font-size: 16px;
+  color: #4b3b39;
+}
+
+.about-box ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about-box ul li {
+  margin-bottom: 8px;
+}
+
+/* Why Legal Lab Section */
+.why-legal-lab-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.why-legal-lab-section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #7a5f5c;
+  font-weight: 600;
+}
+
+.why-legal-lab-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* keep space between list and image */
+  flex-wrap: nowrap; /* prevent wrapping */
+  gap: 20px;
+}
+
+.why-legal-lab-container ul {
+  flex: 1;
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 16px;
+  color: #4b3b39;
+  margin: 0;
+}
+
+.why-legal-lab-container ul li {
+  margin-bottom: 10px;
+}
+
+.why-legal-lab-image {
+  width: 220px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin-right:200px;
+}
+
+/* Call to Action Buttons */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  max-width: 1100px;
+}
+
+.btn {
+background-color: transparent;
+  border: 2px solid #492a3a;;
+  color: #492a3a;;
+}
+
+.btn:hover {
+  background-color: #492a3a;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #492a3a;;
+  color: #492a3a;;
+}
+
+.btn-secondary:hover {
+  background-color: #492a3a;;
+  color: #fff;
+}
