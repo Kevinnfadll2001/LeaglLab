@@ -123,7 +123,7 @@ nav ul li a:hover {
 
 /* FOOTER */
 .site-footer {
-  background-color: #2a1c24;
+  background-color: #492a3a;
   color: #d8d8d8;
   padding: 60px 20px 30px;
   margin-top: 80px;
@@ -187,7 +187,7 @@ nav ul li a:hover {
   margin: 6px 0;
 }
 
-/* SHARED SOCIAL ICON STYLES */
+/* SOCIAL ICONS */
 .social-icons a, .footer-bottom-social a {
   color: #d8d8d8;
   margin-right: 14px;
