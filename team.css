@@ -119,4 +119,10 @@
   text-decoration: none;
   color: inherit;
   display: block;
+  flex: 1 1 calc(33.333% - 20px); /* Same as .team-card */
+  min-width: 250px;
+  box-sizing: border-box;
+}
+.team-card-link .team-card {
+  height: 100%;
 }
