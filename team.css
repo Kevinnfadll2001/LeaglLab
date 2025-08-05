@@ -115,3 +115,8 @@
   background-color: #492a3a;
   color: #fff;
 }
+.team-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
