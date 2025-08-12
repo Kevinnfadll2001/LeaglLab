@@ -6,9 +6,8 @@
   <title>Legal Lab - Joe Akiki</title>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
   <!-- Shared Styles -->
   <link rel="stylesheet" href="../common.css" />
@@ -19,39 +18,55 @@
 </head>
 <body>
 
+  <!-- Include header -->
   <div data-include="../header.html"></div>
 
+  <!-- Main Content -->
   <main class="profile-section">
-    <div class="profile-image" style="background-image: url('joe.png');"></div>
-    <h1>Joe Akiki</h1>
-    <h3>Partner – Head of Banking and Finance</h3>
-    <p>
-      Joe brings over a decade of experience in financial law, advising institutions on regulatory compliance, risk management, and finance disputes.
-    </p>
-
-    <div class="profile-details">
-      <h2>Expertise</h2>
-      <ul>
-        <li>Banking Law</li>
-        <li>Finance Disputes</li>
-        <li>Regulatory Compliance</li>
-      </ul>
+    <div class="profile-card">
+      <div class="profile-image" style="background-image: url('joe.png');"></div>
+      <h1>Joe Akiki</h1>
+      <h3>Partner – Head of Banking and Finance</h3>
+      <p>
+        Joe brings over a decade of experience in financial law, advising institutions on regulatory compliance, risk management, and finance disputes.
+      </p>
     </div>
 
-    <div class="profile-details">
-      <h2>Languages</h2>
-      <ul>
-        <li>Arabic – Native</li>
-        <li>English – Fluent</li>
-      </ul>
+    <div class="profile-info">
+      <section>
+        <h2><i class="fas fa-balance-scale"></i> Expertise</h2>
+        <ul>
+          <li>Banking Law</li>
+          <li>Finance Disputes</li>
+          <li>Regulatory Compliance</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><i class="fas fa-briefcase"></i> Professional Highlights</h2>
+        <ul>
+          <li>Advised top-tier banks on compliance frameworks</li>
+          <li>Represented clients in high-value finance litigation</li>
+          <li>Implemented risk management protocols for financial institutions</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><i class="fas fa-language"></i> Languages</h2>
+        <ul>
+          <li>Arabic – Native</li>
+          <li>English – Fluent</li>
+        </ul>
+      </section>
     </div>
 
     <div class="cta-buttons">
-      <a href="tel:+96171719056" class="btn btn-secondary">Contact Joe</a>
+      <a href="tel:+96171719056" class="btn">Contact Joe</a>
       <a href="../team.html" class="btn btn-secondary">Back to Team</a>
     </div>
   </main>
 
+  <!-- Include footer -->
   <div data-include="../footer.html"></div>
 
 </body>

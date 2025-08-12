@@ -4,51 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Legal Lab - Elsherif Sleiman</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Shared Styles -->
   <link rel="stylesheet" href="../common.css" />
   <link rel="stylesheet" href="profile.css" />
+
+  <!-- Header/Footer includes -->
   <script src="../include.js" defer></script>
 </head>
 <body>
 
-<div data-include="../header.html"></div>
+  <!-- Include header -->
+  <div data-include="../header.html"></div>
 
-<main class="profile-section">
-  <div class="profile-image" style="background-image: url('elsherif.png');"></div>
-  <h1>Elsherif Sleiman</h1>
-  <h3>Co-founder & Director</h3>
-  <p>
-    A respected figure in corporate and public law, Elsherif Sleiman is a co-founder of Legal Lab and leads strategic initiatives promoting integrity and anti-corruption in the Lebanese legal system.
-  </p>
+  <!-- Main Content -->
+  <main class="profile-section">
+    <div class="profile-card">
+      <div class="profile-image" style="background-image: url('elsherif.png');"></div>
+      <h1>Elsherif Sleiman</h1>
+      <h3>Co-founder & Director</h3>
+      <p>
+        A respected figure in corporate and public law, Elsherif Sleiman is a co-founder of Legal Lab and leads strategic initiatives promoting integrity and anti-corruption in the Lebanese legal system.
+      </p>
+    </div>
 
-  <div class="profile-details">
-    <h2>Expertise</h2>
-    <ul>
-      <li>Corporate Governance</li>
-      <li>Public Sector Legal Reform</li>
-      <li>Anti-Corruption Law</li>
-      <li>Strategic Legal Policy</li>
-    </ul>
-  </div>
+    <div class="profile-info">
+      <section>
+        <h2><i class="fas fa-balance-scale"></i> Expertise</h2>
+        <ul>
+          <li>Corporate Governance</li>
+          <li>Public Sector Legal Reform</li>
+          <li>Anti-Corruption Law</li>
+          <li>Strategic Legal Policy</li>
+        </ul>
+      </section>
 
-  <div class="profile-details">
-    <h2>Languages</h2>
-    <ul>
-      <li>Arabic – Native</li>
-      <li>English – Fluent</li>
-      <li>French – Fluent</li>
-    </ul>
-  </div>
+      <section>
+        <h2><i class="fas fa-language"></i> Languages</h2>
+        <ul>
+          <li>Arabic – Native</li>
+          <li>English – Fluent</li>
+          <li>French – Fluent</li>
+        </ul>
+      </section>
+    </div>
 
-  <div class="cta-buttons">
-    <a href="tel:+96171719056" class="btn btn-secondary">Contact Elsherif</a>
-    <a href="../team.html" class="btn btn-secondary">Back to Team</a>
-  </div>
-</main>
+    <div class="cta-buttons">
+      <a href="tel:+96171719056" class="btn">Contact Elsherif</a>
+      <a href="../team.html" class="btn btn-secondary">Back to Team</a>
+    </div>
+  </main>
 
-<div data-include="../footer.html"></div>
+  <!-- Include footer -->
+  <div data-include="../footer.html"></div>
 
 </body>
 </html>

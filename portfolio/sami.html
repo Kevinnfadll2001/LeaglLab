@@ -6,9 +6,8 @@
   <title>Legal Lab - Sami Younes</title>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
   <!-- Shared Styles -->
   <link rel="stylesheet" href="../common.css" />
@@ -19,39 +18,55 @@
 </head>
 <body>
 
+  <!-- Include header -->
   <div data-include="../header.html"></div>
 
+  <!-- Main Content -->
   <main class="profile-section">
-    <div class="profile-image" style="background-image: url('sami.png');"></div>
-    <h1>Sami Younes</h1>
-    <h3>Partner – Head of Criminal Law</h3>
-    <p>
-      With a sharp mind for criminal defense, Sami represents clients in high-stakes criminal cases and is known for his deep knowledge of penal law.
-    </p>
-
-    <div class="profile-details">
-      <h2>Expertise</h2>
-      <ul>
-        <li>Criminal Defense</li>
-        <li>Lebanese Penal Code</li>
-        <li>Forensic Legal Analysis</li>
-      </ul>
+    <div class="profile-card">
+      <div class="profile-image" style="background-image: url('sami.png');"></div>
+      <h1>Sami Younes</h1>
+      <h3>Partner – Head of Criminal Law</h3>
+      <p>
+        With a sharp mind for criminal defense, Sami represents clients in high-stakes criminal cases and is known for his deep knowledge of penal law.
+      </p>
     </div>
 
-    <div class="profile-details">
-      <h2>Languages</h2>
-      <ul>
-        <li>Arabic – Native</li>
-        <li>English – Fluent</li>
-      </ul>
+    <div class="profile-info">
+      <section>
+        <h2><i class="fas fa-balance-scale"></i> Expertise</h2>
+        <ul>
+          <li>Criminal Defense</li>
+          <li>Lebanese Penal Code</li>
+          <li>Forensic Legal Analysis</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><i class="fas fa-gavel"></i> Practice Highlights</h2>
+        <ul>
+          <li>Defended clients in landmark criminal cases</li>
+          <li>Advised on reforms to investigative procedures</li>
+          <li>Provided expert analysis in complex forensic matters</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><i class="fas fa-language"></i> Languages</h2>
+        <ul>
+          <li>Arabic – Native</li>
+          <li>English – Fluent</li>
+        </ul>
+      </section>
     </div>
 
     <div class="cta-buttons">
-      <a href="tel:+96171719056" class="btn btn-secondary">Contact Sami</a>
+      <a href="tel:+96171719056" class="btn">Contact Sami</a>
       <a href="../team.html" class="btn btn-secondary">Back to Team</a>
     </div>
   </main>
 
+  <!-- Include footer -->
   <div data-include="../footer.html"></div>
 
 </body>
