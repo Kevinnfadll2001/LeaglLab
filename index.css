@@ -1,4 +1,4 @@
-/* Hero Section with background image and overlay */
+/* Hero Section */
 .hero {
   max-width: 100%;
   margin: 0;
@@ -8,11 +8,8 @@
   color: #ffffff;
   text-align: center;
   position: relative;
-  overflow: hidden;
-  margin-bottom: 80px; 
 }
 
-/* Dark overlay for readability */
 .hero::before {
   content: '';
   position: absolute;
@@ -24,7 +21,6 @@
   z-index: 0;
 }
 
-/* Text content above overlay */
 .hero h1,
 .hero-location {
   position: relative;
@@ -46,34 +42,6 @@
   color: #f0f0f0;
 }
 
-/* Spacing to prevent header overlap */
-.main {
-  margin-top: 20px;
-  padding-top: 20px;
-}
-
-/* Introduction & Highlights (if needed later) */
-.introduction,
-.services-highlights {
-  margin: 60px auto;
-  max-width: 800px;
-  text-align: center;
-}
-
-.introduction h2,
-.services-highlights h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
-  color: #7a5f5c;
-  font-weight: 600;
-}
-
-.introduction p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #5a4a48;
- 
-};
 /* Containers */
 .container {
   max-width: 1200px;
@@ -84,17 +52,18 @@
 /* Two-column layout */
 .two-columns {
   display: flex;
-  flex-wrap: wrap; /* allows columns to wrap on small screens */
-  gap: 40px;       /* horizontal space between columns */
-  justify-content: center; /* centers columns when they wrap */
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
 }
 
 .column {
-  flex: 1 1 45%;    /* takes 45% of width on large screens */
-  min-width: 250px; /* ensures columns don’t shrink too small */
+  flex: 1 1 45%;
+  min-width: 280px;
   background-color: #f8f8f8;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .column h2 {
@@ -107,34 +76,92 @@
   font-family: 'Poppins', sans-serif;
   color: #4b4b4b;
   line-height: 1.6;
+  margin-bottom: 15px;
 }
 
-/* Expertise section */
+/* Button styling */
+.column a.btn {
+  display: inline-block;
+  background-color: #7a5f5c;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.column a.btn:hover {
+  background-color: #5c4745;
+}
+
+/* Icon styling */
+p i {
+  color: #7a5f5c;
+  margin-right: 10px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+/* Expertise Section */
 .expertise {
-  margin-top: 0px;
   text-align: center;
+  margin: 80px 0;
 }
 
 .expertise h2 {
   font-family: 'Playfair Display', serif;
   color: #2c2c2c;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .expertise p {
   font-family: 'Poppins', sans-serif;
   color: #4b4b4b;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   line-height: 1.6;
 }
+
+/* Expertise Cards */
+.expertise-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.expertise-item {
+  background-color: #f8f8f8;
+  flex: 1 1 300px;
+  max-width: 350px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.expertise-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+}
+
+.expertise-item p {
+  font-family: 'Poppins', sans-serif;
+  color: #4b4b4b;
+  line-height: 1.6;
+}
+
+/* Responsive */
 @media screen and (max-width: 768px) {
-  .two-columns {
-    flex-direction: column; /* stack columns vertically */
-    gap: 20px;              /* smaller gap for mobile */
+  .two-columns, .expertise-list {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .column {
-    flex: 1 1 100%; /* each column takes full width */
+  .column, .expertise-item {
+    flex: 1 1 100%;
   }
 }
