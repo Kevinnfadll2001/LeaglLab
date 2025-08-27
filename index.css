@@ -84,12 +84,14 @@
 /* Two-column layout */
 .two-columns {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px; /* space between columns */
+  flex-wrap: wrap; /* allows columns to wrap on small screens */
+  gap: 40px;       /* horizontal space between columns */
+  justify-content: center; /* centers columns when they wrap */
 }
 
 .column {
-  flex: 1 1 45%; /* responsive columns */
+  flex: 1 1 45%;    /* takes 45% of width on large screens */
+  min-width: 250px; /* ensures columns don’t shrink too small */
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 10px;
@@ -125,4 +127,14 @@
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+}
+@media screen and (max-width: 768px) {
+  .two-columns {
+    flex-direction: column; /* stack columns vertically */
+    gap: 20px;              /* smaller gap for mobile */
+  }
+
+  .column {
+    flex: 1 1 100%; /* each column takes full width */
+  }
 }
