@@ -70,6 +70,7 @@
     <div class="cta-buttons testimonials-cta">
       <a href="#" class="btn btn-secondary">See More Reviews</a>
       <a href="#" class="btn btn-secondary" id="leaveReviewBtn">Leave Your Review</a>
+      <a href="#" class="btn btn-danger" id="clearReviewsBtn">Clear My Reviews</a>
     </div>
   </main>
 
@@ -95,6 +96,7 @@
     const modal = document.getElementById("reviewModal");
     const closeBtn = document.querySelector(".close");
     const leaveReviewBtn = document.getElementById("leaveReviewBtn");
+    const clearBtn = document.getElementById("clearReviewsBtn");
     const form = document.getElementById("reviewForm");
     const testimonialsList = document.getElementById("testimonialsList");
 
@@ -151,6 +153,13 @@
       `;
       testimonialsList.appendChild(card);
     }
+
+    // Clear Reviews Button
+    clearBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.removeItem("reviews");
+      location.reload(); // reload to remove them visually
+    });
   </script>
 </body>
 </html>
