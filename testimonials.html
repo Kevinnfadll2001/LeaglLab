@@ -22,9 +22,8 @@
       <p>Here’s what clients have to say about Legal Lab:</p>
     </section>
 
-    <section class="testimonials-list">
-
-      <!-- Testimonial -->
+    <section class="testimonials-list" id="testimonialsList">
+      <!-- Default Testimonials -->
       <div class="testimonial-card">
         <h3>Chadi Sleiman</h3>
         <span class="role">Chief Vision Officer, Golden Leisure International Offshore</span>
@@ -66,17 +65,92 @@
         <span class="role">Managing Director, SENSES Training Solutions</span>
         <p>“I have known Maitre Sherif Sleiman for almost 17 years. Very vibrant character, transparent, resilient, and an honest person indeed...”</p>
       </div>
-
     </section>
 
     <div class="cta-buttons testimonials-cta">
       <a href="#" class="btn btn-secondary">See More Reviews</a>
-      <a href="#" class="btn btn-secondary">Leave Your Review</a>
+      <a href="#" class="btn btn-secondary" id="leaveReviewBtn">Leave Your Review</a>
     </div>
   </main>
+
+  <!-- Review Modal -->
+  <div id="reviewModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Leave Your Review</h2>
+      <form id="reviewForm">
+        <input type="text" id="reviewName" placeholder="Your Name" required />
+        <input type="text" id="reviewRole" placeholder="Your Role" />
+        <textarea id="reviewText" placeholder="Write your review..." required></textarea>
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Footer -->
   <div data-include="footer.html"></div>
 
+  <!-- Modal Script -->
+  <script>
+    const modal = document.getElementById("reviewModal");
+    const closeBtn = document.querySelector(".close");
+    const leaveReviewBtn = document.getElementById("leaveReviewBtn");
+    const form = document.getElementById("reviewForm");
+    const testimonialsList = document.getElementById("testimonialsList");
+
+    // Load saved reviews from localStorage
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+      savedReviews.forEach(addReviewToPage);
+    });
+
+    // Open Modal
+    leaveReviewBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.style.display = "flex";
+    });
+
+    // Close Modal
+    closeBtn.addEventListener("click", () => modal.style.display = "none");
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+
+    // Handle Form Submission
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("reviewName").value.trim();
+      const role = document.getElementById("reviewRole").value.trim();
+      const text = document.getElementById("reviewText").value.trim();
+
+      if (name && text) {
+        const review = { name, role, text };
+
+        // Save to localStorage
+        const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        savedReviews.push(review);
+        localStorage.setItem("reviews", JSON.stringify(savedReviews));
+
+        // Add to page
+        addReviewToPage(review);
+
+        form.reset();
+        modal.style.display = "none";
+      }
+    });
+
+    // Function to render a review
+    function addReviewToPage(review) {
+      const card = document.createElement("div");
+      card.classList.add("testimonial-card");
+      card.innerHTML = `
+        <h3>${review.name}</h3>
+        <span class="role">${review.role || "Client"}</span>
+        <p>“${review.text}”</p>
+      `;
+      testimonialsList.appendChild(card);
+    }
+  </script>
 </body>
 </html>
