@@ -24,9 +24,17 @@
     </section>
 
     <!-- Image -->
-    <section class="about-image">
-      <img src="mizen.png" alt="Legal Lab Office">
-    </section>
+<section class="about-gallery">
+  
+  <div class="gallery-scroll">
+    <img src="law1.jpg" alt="Legal Lab Office" class="gallery-img">
+    <img src="law2.jpg" alt="Legal Consultation" class="gallery-img">
+    <img src="law3.jpg" alt="Courtroom" class="gallery-img">
+    <img src="law4.jpg" alt="Legal Documents" class="gallery-img">
+  </div>
+</section>
+
+
 
     <!-- Vision, Mission, Values -->
     <section class="about-boxes">
@@ -74,6 +82,15 @@
   </main>
 
   <div data-include="footer.html"></div>
+<script>
+  // Duplicate images to create a seamless infinite scroll effect
+  document.addEventListener("DOMContentLoaded", function() {
+    const gallery = document.querySelector('.gallery-scroll');
+    if (gallery) {
+      gallery.innerHTML += gallery.innerHTML;
+    }
+  });
+</script>
 
 </body>
 </html>

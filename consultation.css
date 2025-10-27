@@ -63,7 +63,7 @@
 }
 /* Add background to the whole body */
 body {
-  background: url('logo.png') no-repeat center center fixed;
+  /* background: url('logo.png') no-repeat center center fixed; */
   background-size: cover;
   margin: 0;
   padding: 0;

@@ -1,4 +1,6 @@
-/* Reset background and base settings */
+/* ================================
+   Base and General Styling
+================================ */
 body {
   margin: 0;
   padding: 0;
@@ -13,7 +15,9 @@ main {
   padding: 20px;
 }
 
-/* Intro Text */
+/* ================================
+   Intro Section
+================================ */
 .about-intro {
   max-width: 1100px;
   margin: 60px auto 50px auto;
@@ -25,22 +29,54 @@ main {
   line-height: 1.7;
 }
 
-/* Image Section */
-.about-image {
-  max-width: 1100px;
-  margin: 0 auto 50px auto;
-  text-align: center;
+/* ================================
+   Auto-Scrolling Gallery Section
+================================ */
+.about-gallery {
+  max-width: 1200px;
+  margin: 60px auto;
+  overflow: hidden;
+  position: relative;
 }
 
-.about-image img {
-  width: 100%;
-  max-height: 500px;
+.gallery-scroll {
+  display: flex;
+  gap: 20px;
+  animation: scrollGallery 25s linear infinite;
+}
+
+.gallery-img {
+  height: 280px;
+  width: 400px;
+  flex: 0 0 auto;
+  border-radius: 12px;
   object-fit: cover;
-  display: block;
-  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Boxes: Vision, Mission, Values */
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Continuous scroll animation */
+@keyframes scrollGallery {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause scrolling on hover */
+.about-gallery:hover .gallery-scroll {
+  animation-play-state: paused;
+}
+
+/* ================================
+   Vision, Mission, Values Boxes
+================================ */
 .about-boxes {
   display: flex;
   flex-wrap: wrap;
@@ -79,7 +115,9 @@ main {
   margin-bottom: 8px;
 }
 
-/* Why Legal Lab Section */
+/* ================================
+   Why Legal Lab Section
+================================ */
 .why-legal-lab-section {
   max-width: 1100px;
   margin: 60px auto;
@@ -96,8 +134,8 @@ main {
 .why-legal-lab-container {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* keep space between list and image */
-  flex-wrap: nowrap; /* prevent wrapping */
+  justify-content: space-between;
+  flex-wrap: nowrap;
   gap: 20px;
 }
 
@@ -119,10 +157,12 @@ main {
   height: auto;
   display: block;
   object-fit: contain;
-  margin-right:200px;
+  margin-right: 200px;
 }
 
-/* Call to Action Buttons */
+/* ================================
+   Call-to-Action Buttons
+================================ */
 .cta-buttons {
   display: flex;
   justify-content: center;
@@ -132,23 +172,39 @@ main {
   max-width: 1100px;
 }
 
-.btn {
-background-color: transparent;
-  border: 2px solid #492a3a;;
-  color: #492a3a;;
-}
-
-.btn:hover {
-  background-color: #492a3a;
-}
-
+.btn,
 .btn-secondary {
   background-color: transparent;
-  border: 2px solid #492a3a;;
-  color: #492a3a;;
+  border: 2px solid #492a3a;
+  color: #492a3a;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
+.btn:hover,
 .btn-secondary:hover {
-  background-color: #492a3a;;
+  background-color: #492a3a;
   color: #fff;
+}
+
+/* ================================
+   Responsive Design
+================================ */
+@media (max-width: 768px) {
+  .gallery-img {
+    width: 250px;
+    height: 180px;
+  }
+
+  .why-legal-lab-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .why-legal-lab-image {
+    margin: 20px auto 0;
+  }
 }

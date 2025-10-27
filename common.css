@@ -55,7 +55,8 @@ header {
 }
 
 .logo img {
-  height: 70px;
+  height: 100px;
+  margin: 100px;
 }
 
 /* NAVIGATION */
