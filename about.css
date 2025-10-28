@@ -32,6 +32,10 @@ main {
 /* ================================
    Auto-Scrolling Gallery Section
 ================================ */
+/* ==========================
+ /* ==========================
+   Gallery Section
+========================== */
 .about-gallery {
   max-width: 1200px;
   margin: 60px auto;
@@ -47,12 +51,14 @@ main {
   display: flex;
   gap: 20px;
   flex-wrap: nowrap;
-  animation: scrollGallery 10s linear infinite;
+  animation: scrollGallery 5s linear infinite; /* smooth, slow scroll */
 }
 
 /* Images */
 .gallery-img {
-  flex: 0 0 calc(100% / 6 - 16px); /* auto width: divide container by number of images */
+  flex: 0 0 auto;
+  width: 15%;
+  min-width: 120px;
   height: 200px;
   border-radius: 12px;
   object-fit: cover;
@@ -66,28 +72,42 @@ main {
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Scroll animation */
+/* Scroll animation for desktop */
 @keyframes scrollGallery {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-50%); } /* move half of track (original images) */
 }
 
-/* ===== Mobile ===== */
+/* ==========================
+   Mobile version
+========================== */
 @media (max-width: 768px) {
+  .about-gallery {
+    padding: 15px 0;
+    border-radius: 10px;
+  }
+
   .gallery-scroll {
     gap: 12px;
-    animation: scrollGallery 10s linear infinite; /* same speed */
+    flex-wrap: nowrap;
+    animation: scrollGalleryMobile 5s linear infinite; /* same speed as desktop */
   }
 
   .gallery-img {
-    flex: 0 0 calc(100% / 6 - 12px); /* dynamically fit all images in viewport */
+    width: 35vw;            /* smaller so more images fit in viewport */
+    min-width: 120px;
     height: auto;
     aspect-ratio: 326 / 427;
     border-radius: 10px;
+    flex: 0 0 auto;
     object-fit: cover;
   }
-}
 
+  @keyframes scrollGalleryMobile {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* scroll half of track */
+  }
+}
 
 /* ================================
    Vision, Mission, Values Boxes
