@@ -76,7 +76,7 @@ main {
 @media (max-width: 768px) {
   .gallery-scroll {
     gap: 12px;
-    animation: scrollGallery 5s linear infinite; /* same speed */
+    animation: scrollGallery 10s linear infinite; /* same speed */
   }
 
   .gallery-img {
