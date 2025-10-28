@@ -32,59 +32,78 @@ main {
 /* ================================
    Auto-Scrolling Gallery Section
 ================================ */
-/* Gallery container */
+/* ==========================
+ /* ==========================
+   Gallery Section
+========================== */
 .about-gallery {
-  max-width: 100%;
+  max-width: 1200px;
   margin: 60px auto;
   overflow: hidden;
   position: relative;
+  padding: 20px 0;
+  background: #f9f9f9;
+  border-radius: 15px;
 }
 
+/* Scrolling track */
 .gallery-scroll {
   display: flex;
-  gap: 15px;          /* slightly smaller gap */
+  gap: 20px;
   flex-wrap: nowrap;
-  animation: scrollGallery 20s linear infinite;
+  animation: scrollGallery 20s linear infinite; /* smooth, slow scroll */
 }
 
+/* Images */
 .gallery-img {
   flex: 0 0 auto;
-  width: 15%;          /* smaller than 20% before */
-  min-width: 120px;    /* smaller minimum width */
-  height: auto;
+  width: 15%;
+  min-width: 120px;
+  height: 200px;
   border-radius: 12px;
   object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .gallery-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+/* Scroll animation for desktop */
 @keyframes scrollGallery {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); } 
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* move half of track (original images) */
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
+  .about-gallery {
+    padding: 15px 0;
+    border-radius: 10px;
+  }
+
   .gallery-scroll {
-    gap: 8px;
-    animation: scrollGallery 15s linear infinite;
+    gap: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    animation: scrollGalleryMobile 5s linear infinite; /* smooth & slower */
   }
 
   .gallery-img {
-    width: 70vw;     /* smaller than 80vw before */
+    width: 40vw;   /* each image ~40% of viewport */
+    min-width: 100px;
     height: auto;
+    border-radius: 10px;
   }
 
-  @keyframes scrollGallery {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
+  /* smooth infinite scroll */
+  @keyframes scrollGalleryMobile {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* move half of the duplicated track */
   }
 }
-
 
 
 
