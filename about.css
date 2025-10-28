@@ -42,13 +42,15 @@ main {
 .gallery-scroll {
   display: flex;
   gap: 20px;
-  animation: scrollGallery 5s linear infinite;
+  animation: scrollGallery 10s linear infinite;
 }
 
+/* Responsive images */
 .gallery-img {
-  height: 280px;
-  width: 400px;
-  flex: 0 0 auto;
+  flex: 0 0 auto;       /* don't shrink */
+  width: 100%;           /* full width of container for small screens */
+  max-width: 400px;      /* desktop max width */
+  height: auto;          /* maintain aspect ratio */
   border-radius: 12px;
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -61,18 +63,36 @@ main {
 
 /* Continuous scroll animation */
 @keyframes scrollGallery {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* scroll half container width */
 }
 
 /* Pause scrolling on hover */
-.about-gallery:hover .gallery-scroll {
+/* .about-gallery:hover .gallery-scroll {
   animation-play-state: paused;
+} */
+
+/* ================================
+   Mobile Adjustments
+================================ */
+@media (max-width: 768px) {
+  .gallery-scroll {
+    gap: 10px;  /* smaller gaps on mobile */
+    animation: scrollGallery 6s linear infinite; /* faster scroll on mobile */
+  }
+
+  .gallery-img {
+    width: 90%;      /* smaller images for mobile screens */
+    max-width: none;  /* remove desktop max-width */
+    height: auto;
+  }
+
+  @keyframes scrollGallery {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); } /* scroll full width */
+  }
 }
+
 
 /* ================================
    Vision, Mission, Values Boxes
