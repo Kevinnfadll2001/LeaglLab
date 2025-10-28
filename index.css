@@ -3,13 +3,19 @@
   max-width: 100%;
   margin: 0;
   padding: 120px 20px 100px 20px;
-  background: url('homepage.logo.jpeg') no-repeat center center;
+  background: url('homepage.logo.jpg') no-repeat center center;
   background-size: cover;
   color: #ffffff;
   text-align: center;
   position: relative;
 }
-
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    background-size: contain; /* show full image */
+    background-position: top center; /* align nicely */
+  }
+}
 .hero::before {
   content: '';
   position: absolute;

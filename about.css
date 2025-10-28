@@ -42,7 +42,7 @@ main {
 .gallery-scroll {
   display: flex;
   gap: 20px;
-  animation: scrollGallery 25s linear infinite;
+  animation: scrollGallery 5s linear infinite;
 }
 
 .gallery-img {

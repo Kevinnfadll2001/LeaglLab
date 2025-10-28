@@ -55,8 +55,15 @@ header {
 }
 
 .logo img {
-  height: 100px;
+  height: 150px;
   margin: 100px;
+}
+/* Mobile logo */
+@media (max-width: 768px) {
+  .logo img {
+    height: 150px;    /* bigger on mobile */
+    margin: 0;        /* optional: adjust as needed */
+  }
 }
 
 /* NAVIGATION */
