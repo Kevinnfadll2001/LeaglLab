@@ -32,8 +32,9 @@ main {
 /* ================================
    Auto-Scrolling Gallery Section
 ================================ */
+/* Gallery container */
 .about-gallery {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 60px auto;
   overflow: hidden;
   position: relative;
@@ -41,14 +42,16 @@ main {
 
 .gallery-scroll {
   display: flex;
-  gap: 20px;
-  animation: scrollGallery 5s linear infinite;
+  gap: 15px;          /* slightly smaller gap */
+  flex-wrap: nowrap;
+  animation: scrollGallery 20s linear infinite;
 }
 
 .gallery-img {
   flex: 0 0 auto;
-  width: 400px;   /* desktop size */
-  height: 280px;
+  width: 15%;          /* smaller than 20% before */
+  min-width: 120px;    /* smaller minimum width */
+  height: auto;
   border-radius: 12px;
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -59,36 +62,29 @@ main {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* Pause scrolling on hover */
-/* .about-gallery:hover .gallery-scroll {
-  animation-play-state: paused;
-} */
-
-/* Continuous scroll animation (desktop) */
 @keyframes scrollGallery {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); } /* scroll half container width (original images) */
+  to { transform: translateX(-100%); } 
 }
 
-/* ==============================
-   Mobile adjustments
-============================== */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .gallery-scroll {
-    gap: 10px;
-    animation: scrollGallery 12s linear infinite;
+    gap: 8px;
+    animation: scrollGallery 15s linear infinite;
   }
 
   .gallery-img {
-    width: 80vw;   /* responsive width */
+    width: 70vw;     /* smaller than 80vw before */
     height: auto;
   }
 
   @keyframes scrollGallery {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); } /* scroll half width of all images */
+    to { transform: translateX(-100%); }
   }
 }
+
 
 
 
