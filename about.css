@@ -51,7 +51,7 @@ main {
   display: flex;
   gap: 20px;
   flex-wrap: nowrap;
-  animation: scrollGallery 20s linear infinite; /* smooth, slow scroll */
+  animation: scrollGallery 5s linear infinite; /* smooth, slow scroll */
 }
 
 /* Images */
