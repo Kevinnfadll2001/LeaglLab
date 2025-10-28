@@ -33,28 +33,25 @@ main {
    Auto-Scrolling Gallery Section
 ================================ */
 /* ==========================
- /* ==========================
-   Gallery Section
+   Gallery Section - Desktop
 ========================== */
 .about-gallery {
   max-width: 1200px;
   margin: 60px auto;
   overflow: hidden;
-  position: relative;
   padding: 20px 0;
   background: #f9f9f9;
   border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
-/* Scrolling track */
 .gallery-scroll {
   display: flex;
   gap: 20px;
   flex-wrap: nowrap;
-  animation: scrollGallery 5s linear infinite; /* smooth, slow scroll */
+  animation: scrollDesktop 10s linear infinite;
 }
 
-/* Images */
 .gallery-img {
   flex: 0 0 auto;
   width: 15%;
@@ -68,44 +65,46 @@ main {
 }
 
 .gallery-img:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Scroll animation for desktop */
-@keyframes scrollGallery {
+/* Desktop scroll animation */
+@keyframes scrollDesktop {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* move half of track (original images) */
+  100% { transform: translateX(-50%); }
 }
 
+/* ==========================
+   Mobile Style
+========================== */
 @media (max-width: 768px) {
   .about-gallery {
-    padding: 15px 0;
+    padding: 15px 10px;
     border-radius: 10px;
   }
 
   .gallery-scroll {
-    gap: 12px;
-    display: flex;
-    flex-wrap: nowrap;
-    animation: scrollGalleryMobile 5s linear infinite; /* smooth & slower */
+    gap: 10px;
+    animation: scrollMobile 8s linear infinite;
   }
 
   .gallery-img {
-    width: 40vw;   /* each image ~40% of viewport */
-    min-width: 100px;
+    flex: 0 0 auto;
     height: auto;
+    aspect-ratio: 326 / 427;
     border-radius: 10px;
+    object-fit: cover;
+    /* width: auto based on number of images in row */
+    width: calc((100% - (6 * 10px)) / 6); /* adjust dynamically for 6 images */
   }
 
-  /* smooth infinite scroll */
-  @keyframes scrollGalleryMobile {
+  /* Smooth horizontal scroll */
+  @keyframes scrollMobile {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* move half of the duplicated track */
+    100% { transform: translateX(-50%); }
   }
 }
-
-
 
 /* ================================
    Vision, Mission, Values Boxes
