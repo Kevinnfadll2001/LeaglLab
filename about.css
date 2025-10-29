@@ -93,7 +93,7 @@ main {
     display: flex;
     gap: 15px;
     flex-wrap: nowrap;
-    animation: scrollGalleryMobile 10s linear infinite; /* auto-scroll */
+    animation: scrollGalleryMobile 8s linear infinite; /* auto-scroll */
     will-change: transform;
   }
 

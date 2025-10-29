@@ -81,14 +81,31 @@
 
   <div data-include="footer.html"></div>
 <script>
-  // Duplicate images to create a seamless infinite scroll effect
-  document.addEventListener("DOMContentLoaded", function() {
-    const gallery = document.querySelector('.gallery-scroll');
-    if (gallery) {
-      gallery.innerHTML += gallery.innerHTML;
-    }
-  });
+document.addEventListener("DOMContentLoaded", function() {
+  const gallery = document.querySelector('.gallery-scroll');
+  if (!gallery) return;
+
+  // Duplicate content for seamless infinite effect
+  gallery.innerHTML += gallery.innerHTML;
+
+  let timeout;
+
+  // Pause animation while user is touching or scrolling
+  function pauseAnimation() {
+    gallery.style.animationPlayState = "paused";
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      gallery.style.animationPlayState = "running";
+    }, 1500); // resume 1.5s after user stops
+  }
+
+  // Touch + scroll events
+  gallery.addEventListener("touchstart", pauseAnimation);
+  gallery.addEventListener("touchmove", pauseAnimation);
+  gallery.addEventListener("scroll", pauseAnimation);
+});
 </script>
+
 
 </body>
 </html>
