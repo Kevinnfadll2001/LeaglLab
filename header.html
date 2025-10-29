@@ -1,6 +1,7 @@
 <!-- access to all major icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+
 <!-- Top Header -->
 <div class="top-header">
   <div class="social-icons">
@@ -14,14 +15,15 @@
 
 <!-- Main Header -->
 <header>
-  <div class="logo">
-    <a href="/index.html">
-      <img src="/logo.png" alt="Legal Lab Logo">
-    </a>
-  </div>
+  <div class="header-inner">
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/logo.png" alt="Legal Lab Logo">
+      </a>
+    </div>
 
-  <!-- Hamburger -->
-  <div class="nav-toggle" id="navToggle">&#9776;</div>
+    <div class="nav-toggle" id="navToggle">&#9776;</div>
+  </div>
 
   <nav id="mainNav">
     <ul>
@@ -36,16 +38,29 @@
   </nav>
 
   <a href="/consultation.html" class="btn btn-secondary free-consultation">Free Consultation</a>
+
+  <!-- Overlay for closing menu when clicked outside -->
+  <div class="overlay" id="menuOverlay"></div>
 </header>
+
 
 <!-- Mobile Toggle Script -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const toggle = document.getElementById("navToggle");
-    const nav = document.getElementById("mainNav");
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
-      toggle.classList.toggle("open");
-    });
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.getElementById("navToggle");
+  const nav = document.getElementById("mainNav");
+  const overlay = document.getElementById("menuOverlay");
+
+  toggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("active");
+    overlay.classList.toggle("active", open);
   });
+
+  overlay.addEventListener("click", () => {
+    nav.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+});
 </script>
+
+
