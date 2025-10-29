@@ -32,11 +32,10 @@ main {
 /* ================================
    Auto-Scrolling Gallery Section
 ================================ */
-/* ==========================
  /* ==========================
-   Gallery Section
-========================== */
-.about-gallery {
+       Gallery Section
+    ========================== */
+    .about-gallery {
   max-width: 1200px;
   margin: 60px auto;
   overflow: hidden;
@@ -46,19 +45,17 @@ main {
   border-radius: 15px;
 }
 
-/* Scrolling track */
 .gallery-scroll {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: nowrap;
-  animation: scrollGallery 5s linear infinite; /* smooth, slow scroll */
+  width: fit-content;
+  animation: scrollGallery 50s linear infinite; /* ⬅️ longer duration for smooth loop */
 }
 
-/* Images */
 .gallery-img {
   flex: 0 0 auto;
-  width: 15%;
-  min-width: 120px;
+  width: 250px;
   height: 200px;
   border-radius: 12px;
   object-fit: cover;
@@ -68,52 +65,32 @@ main {
 }
 
 .gallery-img:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Scroll animation for desktop */
+/* ✅ Updated keyframes to translate full duplicated width */
 @keyframes scrollGallery {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* move half of track (original images) */
+  100% { transform: translateX(-100%); } /* ⬅️ move full width (not half) */
 }
 
 /* ==========================
    Mobile version
 ========================== */
 @media (max-width: 768px) {
-  .about-gallery {
-    padding: 15px 0;
-    border-radius: 10px;
-    overflow-x: auto; /* manual scroll enabled */
-    scroll-snap-type: x mandatory;
+  .gallery-img {
+    width: 60vw;
+    height: 160px;
   }
 
   .gallery-scroll {
-    display: flex;
-    gap: 15px;
-    flex-wrap: nowrap;
-    animation: scrollGalleryMobile 8s linear infinite; /* auto-scroll */
-    will-change: transform;
-  }
-
-  .gallery-img {
-    flex: 0 0 auto;
-    width: 50vw; /* responsive image width */
-    height: 160px;
-    border-radius: 10px;
-    object-fit: cover;
-    scroll-snap-align: start; /* smooth stop while manual swiping */
+    animation: scrollGalleryMobile 60s linear infinite; /* ⬅️ slower for smooth mobile scroll */
   }
 
   @keyframes scrollGalleryMobile {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* Optional: hide scrollbar for a cleaner look */
-  .about-gallery::-webkit-scrollbar {
-    display: none;
+    100% { transform: translateX(-100%); } /* ⬅️ full move again */
   }
 }
 
