@@ -105,53 +105,9 @@ nav ul li a:hover {
   header {
     flex-wrap: wrap;
     padding: 10px 20px;
+    justify-content: center;
   }
 
-  .logo img {
-    height: 65px;
-  }
-
-  .nav-toggle {
-    display: block;
-    order: 2;
-  }
-
-  nav {
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    border-top: 1px solid #ddd;
-    margin-top: 10px;
-    animation: slideDown 0.3s ease;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  nav ul li {
-    width: 100%;
-    border-top: 1px solid #eee;
-  }
-
-  nav ul li a {
-    display: block;
-    padding: 14px 20px;
-    font-size: 16px;
-    text-align: center;@media (max-width: 992px) {
-  header {
-    flex-wrap: wrap;
-    padding: 10px 20px;
-    justify-content: center; /* Center elements on tablets */
-  }
-
-  /* 🟢 Bigger logo for tablets */
   .logo img {
     height: 100px;
     margin: 0 auto;
@@ -163,7 +119,9 @@ nav ul li a:hover {
     order: 2;
   }
 
+  /* 🟢 Make nav appear before the button */
   nav {
+    order: 3; /* nav comes first */
     width: 100%;
     display: none;
     flex-direction: column;
@@ -194,8 +152,9 @@ nav ul li a:hover {
     text-align: center;
   }
 
+  /* 🟢 Consultation button appears after nav */
   .free-consultation {
-    order: 3;
+    order: 4;
     width: 100%;
     text-align: center;
     margin-top: 10px;
@@ -204,38 +163,6 @@ nav ul li a:hover {
   @keyframes slideDown {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
-  }
-}
-
-@media (max-width: 480px) {
-  /* 🟢 Even bigger logo on small phones */
-  .logo img {
-    height: 120px;
-    margin: 0 auto;
-    display: block;
-  }
-
-  header {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 15px;
-  }
-
-  .top-header {
-    flex-direction: column;
-    padding: 6px 15px;
-    text-align: center;
-  }
-
-  nav ul li a {
-    font-size: 15px;
-    padding: 12px 16px;
-  }
-
-  .free-consultation {
-    font-size: 14px;
-    padding: 8px 16px;
   }
 }
 
