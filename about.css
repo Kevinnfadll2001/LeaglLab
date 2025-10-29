@@ -83,29 +83,37 @@ main {
 ========================== */
 @media (max-width: 768px) {
   .about-gallery {
-    padding: 10px 0;
+    padding: 15px 0;
     border-radius: 10px;
+    overflow-x: auto; /* manual scroll enabled */
+    scroll-snap-type: x mandatory;
   }
 
   .gallery-scroll {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr); /* enough columns for all images */
-    grid-auto-flow: column; /* force horizontal flow */
-    grid-template-rows: repeat(2, auto); /* 2 rows */
-    gap: 10px;
-    animation: scrollGalleryMobile 10s linear infinite;
+    display: flex;
+    gap: 15px;
+    flex-wrap: nowrap;
+    animation: scrollGalleryMobile 10s linear infinite; /* auto-scroll */
+    will-change: transform;
   }
 
   .gallery-img {
-    width: 100%;
+    flex: 0 0 auto;
+    width: 50vw; /* responsive image width */
     height: 160px;
     border-radius: 10px;
     object-fit: cover;
+    scroll-snap-align: start; /* smooth stop while manual swiping */
   }
 
   @keyframes scrollGalleryMobile {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  /* Optional: hide scrollbar for a cleaner look */
+  .about-gallery::-webkit-scrollbar {
+    display: none;
   }
 }
 
