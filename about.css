@@ -83,29 +83,29 @@ main {
 ========================== */
 @media (max-width: 768px) {
   .about-gallery {
-    padding: 10px 0;
+    padding: 15px 0;
     border-radius: 10px;
   }
 
   .gallery-scroll {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr); /* enough columns for all images */
-    grid-auto-flow: column; /* force horizontal flow */
-    grid-template-rows: repeat(2, auto); /* 2 rows */
-    gap: 10px;
-    animation: scrollGalleryMobile 10s linear infinite;
+    gap: 12px;
+    flex-wrap: nowrap;
+    animation: scrollGalleryMobile 5s linear infinite; /* same speed as desktop */
   }
 
   .gallery-img {
-    width: 100%;
-    height: 160px;
+    width: 35vw;            /* smaller so more images fit in viewport */
+    min-width: 120px;
+    height: auto;
+    aspect-ratio: 326 / 427;
     border-radius: 10px;
+    flex: 0 0 auto;
     object-fit: cover;
   }
 
   @keyframes scrollGalleryMobile {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-50%); } /* scroll half of track */
   }
 }
 
