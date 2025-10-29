@@ -29,21 +29,31 @@
   </div>
 
 <form action="https://formsubmit.co/kevinfadel15@gmail.com" method="POST" class="contact-form">
+  <!-- Disable captcha if you want -->
   <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://legallab.netlify.app/thankyoucontact">
 
+  <!-- Redirect to a thank you page after submission -->
+  <input type="hidden" name="_next" value="https://legallab.netlify.app/thankyouContact.html">
+
+  <!-- Email subject -->
+  <input type="hidden" name="_subject" value="New Inquiry from Legal Lab Website">
+
+  <!-- Optional: set your name as sender -->
+  <input type="hidden" name="_template" value="table"> 
+
+  <!-- Form fields -->
   <input type="text" name="name" placeholder="Your Name" required>
   <input type="email" name="email" placeholder="Your Email" required>
- <input type="tel" name="phone" placeholder="Your Phone" required pattern="[0-9]{8,15}">
-
+  <input type="tel" name="phone" placeholder="Your Phone" required pattern="[0-9]{8,15}">
   <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
   <div class="cta-buttons">
     <button type="submit" class="btn">Submit Inquiry</button>
-     <a href="https://wa.me/96179353617" target="_blank" class="btn btn-secondary">Chat on WhatsApp</a>
+    <a href="https://wa.me/96179353617" target="_blank" class="btn btn-secondary">Chat on WhatsApp</a>
     <a href="tel:+96179353617" class="btn btn-secondary">Call Legal Lab</a>
   </div>
 </form>
+
 
 </main>
 
