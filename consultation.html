@@ -2,75 +2,89 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Legal Lab - Book a Consultation</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Lab - Book a Consultation</title>
 
-    <link rel="stylesheet" href="common.css" />
-    <link rel="stylesheet" href="consultation.css" />
-    <script src="include.js" defer></script>
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="consultation.css" />
+
+  <script src="include.js" defer></script>
 </head>
 
 <body>
+  <!-- Header -->
+  <div data-include="header.html"></div>
 
-    <!-- Top Header (social icons) -->
+  <!-- Main Content -->
+  <main class="consultation-page">
+    <section class="consultation-hero">
+      <h1>Book a Consultation</h1>
+      <p>Get in touch for personalized legal support tailored to your needs.</p>
+    </section>
 
+    <!-- Consultation Form -->
+    <form id="consultation-form" class="consultation-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="from_name" placeholder="Your Full Name" required />
 
-    <div data-include="header.html"></div>
-    <!-- Main Content -->
-    <main class="consultation-page">
-        <section class="consultation-hero">
-            <h1>Book a Consultation</h1>
-            <p>Get in touch for personalized legal support tailored to your needs.</p>
-        </section>
-        <form class="consultation-form" action="https://formsubmit.co/kevinfadel15@gmail.com" method="POST">
-            <!-- Disable Captcha -->
-            <input type="hidden" name="_captcha" value="false">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="reply_to" placeholder="Your Email" required />
 
-            <!-- Redirect after submit -->
-            <input type="hidden" name="_next" value="https://legallab.netlify.app/thankyouconsultation.html">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="Your Phone" required pattern="[0-9]{8,15}" />
 
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required />
+      <label for="service">Type of Service Needed</label>
+      <select id="service" name="service" required>
+        <option value="" disabled selected>Select a Service</option>
+        <option value="Corporate Law">Corporate Law</option>
+        <option value="Family Law">Family Law</option>
+        <option value="Criminal Law">Criminal Law</option>
+        <option value="Dispute Resolution">Dispute Resolution</option>
+        <option value="Company Setup">Company Setup</option>
+        <option value="Other">Other</option>
+      </select>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+      <label for="description">Description of Legal Issue</label>
+      <textarea id="description" name="message" rows="5" placeholder="Describe your legal issue" required></textarea>
 
-            <label for="phone">Phone</label>
-           <input type="tel" name="phone" placeholder="Your Phone" required pattern="[0-9]{8,15}">
+      <div class="cta-buttons consultation-cta">
+        <button type="submit" class="btn">Submit Request</button>
+        <a href="tel:+96179353617" class="btn btn-secondary">Call Now</a>
+      </div>
+    </form>
+  </main>
 
+  <!-- Footer -->
+  <div data-include="footer.html"></div>
 
-            <label for="service">Type of Service Needed</label>
-            <select id="service" name="service" required>
-                <option value="" disabled selected>Select a Service</option>
-                <option value="Corporate Law">Corporate Law</option>
-                <option value="Family Law">Family Law</option>
-                <option value="Criminal Law">Criminal Law</option>
-                <option value="Dispute Resolution">Dispute Resolution</option>
-                <option value="Company Setup">Company Setup</option>
-                <option value="Other">Other</option>
-            </select>
+  <!-- EmailJS Script -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      // 🔹 Replace with your actual EmailJS public key
+      emailjs.init("YV9g3uAHLXUPJf6V4");
+    })();
 
-            <label for="description">Description of Legal Issue</label>
-            <textarea id="description" name="description" rows="5" required></textarea>
+    document.getElementById("consultation-form").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-            <div class="cta-buttons consultation-cta">
-                <button type="submit" class="btn">Submit Request</button>
-                <a href="tel:+96179353617" class="btn btn-secondary">Call Now</a>
-            </div>
-        </form>
-
-    </main>
-
-    <!-- Footer -->
-    <div data-include="footer.html"></div>
-
+      // 🔹 Replace these IDs with your own from EmailJS
+      emailjs.sendForm("service_m5zmthb", "template_s5wjhus", this)
+        .then(() => {
+          alert("✅ Your consultation request was sent successfully!");
+          window.location.href = "thankyouconsultation.html"; // optional redirect
+        }, (error) => {
+          alert("❌ Failed to send your request. Please try again later.");
+          console.error("EmailJS Error:", error);
+        });
+    });
+  </script>
 </body>
-
 </html>
