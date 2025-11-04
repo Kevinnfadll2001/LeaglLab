@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars(trim($_POST["message"]));
 
     // Email configuration
-    $to      = "kevinfadel15@gmail.com";
+    $to      = "";
     $subject = "New Inquiry from Legal Lab Website";
     
     // Construct the email body
